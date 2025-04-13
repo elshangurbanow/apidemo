@@ -5,7 +5,7 @@ from .config import API_KEY
 app = Flask(__name__)
 
 CORS(app, resources = {r"/api/news": {
-    "origins": [],
+    "origins": ["https://elshangurbanow.github.io"],
     "methods": ["GET"]
 }})
 
@@ -22,4 +22,4 @@ def get_news():
     if api_key and api_key != API_KEY:
         return jsonify({"error": "Invalid api key"})
     
-    return jsonify({"news": news})
+    return jsonify({"news": news}) ee
